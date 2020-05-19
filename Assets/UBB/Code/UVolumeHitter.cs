@@ -13,6 +13,11 @@ public class UVolumeHitter : MonoBehaviour
 
     #endregion
 
+    private void Start()
+    {
+        GetComponent<Collider>().isTrigger = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var hittable = other.GetComponent<UHittable>();
