@@ -9,6 +9,7 @@ public class UVolumeHitter : MonoBehaviour
 
     public int m_damage;
     public bool m_isContinous = false;
+    public bool m_destroyOnImpact = true;
 
     #endregion
 
@@ -20,6 +21,9 @@ public class UVolumeHitter : MonoBehaviour
         {
             hittable.Hit(m_damage);
         }
+
+        if (m_destroyOnImpact)
+            Destroy(this.gameObject);
     }
 
     private void OnTriggerStay(Collider other)
